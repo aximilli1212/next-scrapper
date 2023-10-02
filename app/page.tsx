@@ -35,7 +35,7 @@ const Home = async () => {
                         <Searchbar />
                     </div>
 
-                    {/*<HeroCarousel />*/}
+                    <HeroCarousel />
                 </div>
             </section>
 
