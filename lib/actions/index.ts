@@ -5,14 +5,14 @@ import { revalidatePath } from "next/cache";
 // import { connectToDB } from "../mongoose";
 import { scrapeAmazonProduct } from "../scraper";
 import { getAveragePrice, getHighestPrice, getLowestPrice } from "../utils";
-import { User } from "@/types";
+// import { User } from "@/types";
 // import { generateEmailBody, sendEmail } from "../nodemailer";
 
 export async function scrapeAndStoreProduct(productUrl: string) {
     if(!productUrl) return;
 
     try {
-        connectToDB();
+        // connectToDB();
 
         const scrapedProduct = await scrapeAmazonProduct(productUrl);
 
@@ -51,9 +51,10 @@ export async function scrapeAndStoreProduct(productUrl: string) {
 
 export async function getProductById(productId: string) {
     try {
-        connectToDB();
+        // connectToDB();
 
-        const product = await Product.findOne({ _id: productId });
+        // const product = await Product.findOne({ _id: productId });
+        const product = {}
 
         if(!product) return null;
 
