@@ -1,12 +1,11 @@
 import HeroCarousel from "@/components/HeroCarousel"
 import Searchbar from "@/components/Searchbar"
 import Image from "next/image"
-// import { getAllProducts } from "@/lib/actions"
-// import ProductCard from "@/components/ProductCard"
+import { getAllProducts } from "@/lib/actions"
+import ProductCard from "@/components/ProductCard"
 
 const Home = async () => {
-    // const allProducts = await getAllProducts();
-    const allProducts = ['Macbook', 'Sneakers', 'Furniture']
+    const allProducts = await getAllProducts();
 
     return (
         <>
@@ -44,11 +43,7 @@ const Home = async () => {
 
                 <div className="flex flex-wrap gap-x-8 gap-y-16">
                     {allProducts?.map((product) => (
-                        // <ProductCard key={Math.random()} product={product} />
-
-                        <div key={Math.random()}>
-                            {product}
-                        </div>
+                        <ProductCard key={Math.random()} product={product} />
                     ))}
                 </div>
             </section>
